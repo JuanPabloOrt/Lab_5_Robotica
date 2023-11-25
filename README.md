@@ -4,7 +4,7 @@ Theylor Amaya; Juan Pablo Ortiz 2023-2
 
 ## Cinematica inversa
 Se inicia realizando la programación del robot en cinematica directa en Matalb con ayuda del toolbox de Peter Coke; esto se logra con el siguiente codigo
-'
+'''
 l = [0, 10.6, 10.6, 7.6];
 qini = [0,0,0,0];
 offset = [0, pi/2, 0, 0];
@@ -19,7 +19,8 @@ L(3) = Link(DHparameters(3,:));
 L(4) = Link(DHparameters(4,:));
 Robot_pincher = SerialLink(L,'name','Pincher');
 ws = [-30 30 -30 30 -10 50];
-Robot_pincher.plot([0 0 0 1 ],'workspace',[-2 9 -5 5 -1 7],'noa','jvec','view',[20 30])'
+Robot_pincher.plot([0 0 0 1 ],'workspace',[-2 9 -5 5 -1 7],'noa','jvec','view',[20 30])
+'''
 
 ### Metodo geometrico
 
