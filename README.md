@@ -177,5 +177,7 @@ En el codigo previp se realizaron los siguientes 5 pasos pasos para lograr inici
 A continuación se visualiza como trazo el robot la trayectoria en el tablon mediante la conexion entre ROS y Python.
 
 
+https://github.com/JuanPabloOrt/Lab_5_Robotica/blob/main/video-sin-titulo-hecho-con-clipchamp_1TpcMLTX.mp4
+
 
 
