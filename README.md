@@ -75,8 +75,94 @@ Con este codigo implementado debajo de la creación del robot se da solución a 
  view([4 30]);
  Robot_pincher.plot(qfin,'workspace',ws);
 ```
-### Metodo geometrico
+### Modelo geometrico 
+
+Se crea el siguiente modelo geometricon con el cual se espera que el robot trace dentro del tablon la figura como sigue
+![geometria](https://github.com/JuanPabloOrt/Lab_5_Robotica/assets/144562439/ff2afe5f-386c-4b69-b433-5bf76b9b417a)
+
+
 
 ## Modelo implementado en Python
+
+Con el siguiente codigo de python se ejecuto el ROS en  linux 
+``` python
+import rospy
+import math as m
+import pandas as pd
+from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
+
+# Función de cinemática inversa
+def invKine(y, x, z, o):
+    arriba = 7  # altura herramienta no está escribiendo
+    abajo = 4  # altura herramienta está escribiendo
+    base = 6  # altura tomar la herramienta de la base
+    apertura = 0  # valor de articulación 5 abierta
+    cierre = 1.3  # valor de articulación 5 cerrada
+
+    if z > 19.5 and z < 20.5:
+        z = arriba
+    if z > 3.5 and z < 4.5:
+        z = abajo
+    if o > 0.9 and o < 1.1:
+        th5 = apertura
+    else:
+        th5 = cierre
+    if x == 0:
+        x = 0.01
+
+    h = 14
+    l1 = 10.6
+    l2 = 10.6
+    l3 = 11
+    R1 = m.sqrt(pow(x, 2) + pow(y, 2))
+    th1 = m.atan(y/x)
+    zm = z - h
+    R2 = R1 - l3
+    th3 = m.acos((pow(R2, 2) + pow(zm, 2) - pow(l1, 2) - pow(l2, 2)) / (2*l1*l2))
+    th2 = m.atan(R2 / zm)
+    th4 = -(m.pi / 2) + abs(th2) + abs(th3)
+    # if th2 > 1:
+    #     th2 = 0
+    return [-th1, th2, -th3, th4, th5]
+
+# Función para leer puntos desde un archivo Excel
+def read_points_from_excel(file_path):
+    return pd.read_excel(file_path)
+
+def main():
+    # Inicialización del nodo ROS
+    rospy.init_node('robot_joint_controller', anonymous=True)
+
+    # Publicador para la trayectoria de las articulaciones
+    pub = rospy.Publisher('/joint_trajectory', JointTrajectory, queue_size=10)
+
+    # Leer los puntos desde el archivo Excel
+    points = read_points_from_excel('puntos.xlsx')
+
+    while not rospy.is_shutdown():
+        for _, row in points.iterrows():
+            # Aplicar cinemática inversa a cada punto
+            y, x, z = row['y'], row['x'], row['z']
+            angles = invKine(y, x, z, 1)  # Asumimos 'o' como 0, ajustar según sea necesario
+
+            # Crear un mensaje JointTrajectory
+            trajectory = JointTrajectory()
+            trajectory.header.stamp = rospy.Time.now()
+            trajectory.joint_names = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5']
+            point = JointTrajectoryPoint()
+            point.positions = angles
+            point.time_from_start = rospy.Duration(1)
+            trajectory.points.append(point)
+
+            # Publicar el mensaje
+            pub.publish(trajectory)
+
+            # Pequeña pausa entre puntos
+            rospy.sleep(1)
+
+if __name__ == '__main__':
+    main()
+
+```
 
 ## Trazado de trayectoria del Robot con ROS y Python
