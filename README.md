@@ -198,7 +198,7 @@ https://github.com/JuanPabloOrt/Lab_5_Robotica/assets/144562439/fb12138c-9b35-44
 
 # Trayectoria figura geometrica (inicial T)
 
-https://github.com/JuanPabloOrt/Lab_5_Robotica/assets/144562439/5f267530-b5c2-47ff-982a-50b0c27a4b0f
+https://github.com/JuanPabloOrt/Lab_5_Robotica/assets/144027596/79e75017-ce46-4dec-be99-3294c7a7dc94
 
 # Trayectoria figura geometrica (inicial J)
 
