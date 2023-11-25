@@ -176,34 +176,36 @@ En el codigo previp se realizaron los siguientes 5 pasos pasos para lograr inici
 ## Trazado de trayectoria del Robot con ROS y Python
 A continuación se visualiza como trazo el robot la trayectoria en el tablon mediante la conexion entre ROS y Python.
 
-
+# Trayectoria arco pequeño
 
 https://github.com/JuanPabloOrt/Lab_5_Robotica/assets/144562439/c81e7034-71fb-4831-9152-98574972bab1
 
+# Trayectoria arco grande
 
 https://github.com/JuanPabloOrt/Lab_5_Robotica/assets/144562439/f4c85bb5-e00c-430a-9335-919068369c34
 
-
+# Trayectoria figura personalizada (estrella)
 
 https://github.com/JuanPabloOrt/Lab_5_Robotica/assets/144562439/e494c3f9-cbf8-4469-bd2d-6cfcc1532fd4
 
+# Trayectoria figura personalizada (diamante)
 
 https://github.com/JuanPabloOrt/Lab_5_Robotica/assets/144562439/b668a47d-2de7-45d2-9456-6c7b7d8764d8
 
-
+# Trayectoria figura personalizada (triangulo)
 
 https://github.com/JuanPabloOrt/Lab_5_Robotica/assets/144562439/fb12138c-9b35-4404-8a5c-cf83edefaf4b
 
-
+# Trayectoria figura geometrica (inicial T)
 
 https://github.com/JuanPabloOrt/Lab_5_Robotica/assets/144562439/5f267530-b5c2-47ff-982a-50b0c27a4b0f
 
-
+# Trayectoria figura geometrica (inicial J)
 
 https://github.com/JuanPabloOrt/Lab_5_Robotica/assets/144562439/76b015cb-6fc6-48d1-b3eb-e770e9b9fd7f
 
 
-A partir de estos videos se observa que luuego de posicionada la herramienta en el robot, se logró trazar la trayectoria deseada en el espacio de trabajo designado.
+A partir de estos videos se observa que luego de posicionada la herramienta en el robot, se logró trazar la trayectoria deseada en el espacio de trabajo designado.
 
 ## Conclusiones
 
