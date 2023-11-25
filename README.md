@@ -208,4 +208,4 @@ A partir de estos videos se observa que luuego de posicionada la herramienta en 
 ## Conclusiones
 
 
-
+Se observa que a partir de una trayectoria dada con ayuda de la ubicación de los puntos en una matriz, se puede logra que en movimientos ya sea rectos o curvilineos el robot siga esta trayectorias, ademas se observa que por medio de la metodologia de cinematica inversa es posible tambien lograr el movimiento del robot phantomx a traves del software libre ROS, siendo asi la unica necesidad en equipo de pago, disponer del robot, ya que ROS tambien permite realizar la simulacion de estos movimientos
