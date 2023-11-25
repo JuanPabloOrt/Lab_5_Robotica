@@ -4,7 +4,7 @@ Theylor Amaya; Juan Pablo Ortiz 2023-2
 
 ## Cinematica inversa
 Se inicia realizando la programación del robot en cinematica directa en Matalb con ayuda del toolbox de Peter Coke; esto se logra con el siguiente codigo
-'''
+'''ruby
 l = [0, 10.6, 10.6, 7.6];
 qini = [0,0,0,0];
 offset = [0, pi/2, 0, 0];
