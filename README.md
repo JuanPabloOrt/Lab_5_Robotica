@@ -164,5 +164,18 @@ if __name__ == '__main__':
     main()
 
 ```
+En el codigo previp se realizaron los siguientes 5 pasos pasos para lograr inicialemnte el psicionamiento y luego la indicación d elas trayectoriasdel robto Phantom.
+
+
+1. Cinematica inversa y psicionamiento del cero como el tablero de trazado.
+2. Lectura de los puntos de trazado establecidos en excel
+3. Creacion del main donde se inicia el nodo ROS
+4. Iniciación del posicionamiento y trazado de la geometria
+
 
 ## Trazado de trayectoria del Robot con ROS y Python
+A continuación se visualiza como trazo el robot la trayectoria en el tablon mediante la conexion entre ROS y Python.
+
+
+
+
